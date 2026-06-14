@@ -1,0 +1,542 @@
+1.  Background  
+Steel  manufacturing  plants  operate  highly  complex,  capital-intensive,  and  
+interdependent
+ 
+equipment
+ 
+systems.
+ 
+Any
+ 
+unplanned
+ 
+downtime
+ 
+in
+ 
+such
+ 
+environments
+ 
+can
+ 
+result
+ 
+in
+ 
+production
+ 
+loss,
+ 
+safety
+ 
+risks,
+ 
+operational
+ 
+inefficiencies,
+ 
+and
+ 
+increased
+ 
+maintenance
+ 
+costs.
+ 
+In  practice,  maintenance  engineers  often  rely  on  multiple  fragmented  information  
+sources—such
+ 
+as
+ 
+equipment
+ 
+manuals,
+ 
+standard
+ 
+operating
+ 
+procedures
+ 
+(SOPs),
+ 
+historical
+ 
+maintenance
+ 
+logs,
+ 
+failure
+ 
+analysis
+ 
+reports,
+ 
+and
+ 
+sensor-based
+ 
+alerts—to
+ 
+identify
+ 
+equipment
+ 
+issues
+ 
+and
+ 
+determine
+ 
+appropriate
+ 
+corrective
+ 
+action.
+ 
+This
+ 
+process
+ 
+is
+ 
+typically
+ 
+manual,
+ 
+time-consuming,
+ 
+and
+ 
+dependent
+ 
+on
+ 
+expert
+ 
+judgement,
+ 
+which
+ 
+can
+ 
+delay
+ 
+response
+ 
+times
+ 
+and
+ 
+reduce
+ 
+consistency
+ 
+in
+ 
+maintenance
+ 
+decisions.
+ 
+There  is  a  clear  need  for  an  intelligent,  context-aware  maintenance  support  system  that  
+can
+ 
+consolidate
+ 
+diverse
+ 
+data
+ 
+sources,
+ 
+assist
+ 
+in
+ 
+diagnosis,
+ 
+improve
+ 
+root
+ 
+cause
+ 
+analysis,
+ 
+recommend
+ 
+prioritized
+ 
+maintenance
+ 
+actions,
+ 
+and
+ 
+enable
+ 
+predictive
+ 
+maintenance
+ 
+for
+ 
+critical
+ 
+industrial
+ 
+assets.
+ 
+2.  Objective  
+The  objective  of  this  problem  statement  is  to  design  and  develop  an  intelligent  
+Maintenance
+ 
+Wizard
+ 
+for
+ 
+industrial
+ 
+equipment
+ 
+in
+ 
+steel
+ 
+manufacturing
+ 
+environments.
+ 
+The  proposed  system  should  act  as  a  decision-support  platform  for  maintenance  
+engineers
+ 
+by
+ 
+enabling:
+ 
+●  Faster  and  more  accurate  diagnosis  of  equipment  issues  ●  Identification  of  probable  root  causes  of  failures  ●  Prediction  of  equipment  degradation  and  remaining  useful  life  ●  Proactive  detection  of  abnormalities  and  catastrophic  failure  risks  ●  Prioritization  of  maintenance  actions  based  on  operational  and  procurement  
+constraints
+ ●  Generation  of  structured  maintenance  insights  and  reports  
+The  solution  should  support  both  reactive  troubleshooting  and  proactive  maintenance  
+planning,
+ 
+thereby
+ 
+improving
+ 
+plant
+ 
+reliability,
+ 
+reducing
+ 
+downtime,
+ 
+and
+ 
+enhancing
+ 
+maintenance
+ 
+efficiency.
+ 
+3.  Problem  Description  
+
+Participants  are  required  to  build  a  system  that  can  ingest  maintenance-related  inputs  
+from
+ 
+multiple
+ 
+sources
+ 
+and
+ 
+provide
+ 
+explainable,
+ 
+actionable,
+ 
+and
+ 
+structured
+ 
+outputs
+ 
+for
+ 
+maintenance
+ 
+decision-making.
+ 
+The  system  should  be  capable  of  analysing  equipment  conditions,  identifying  
+abnormalities,
+ 
+assessing
+ 
+risk
+ 
+levels,
+ 
+recommending
+ 
+immediate
+ 
+and
+ 
+long-term
+ 
+maintenance
+ 
+actions,
+ 
+and
+ 
+assisting
+ 
+users
+ 
+through
+ 
+natural
+ 
+language
+ 
+interaction.
+ 
+The  proposed  solution  should  also  support  learning  from  historical  data  and  engineer  
+feedback,
+ 
+enabling
+ 
+continuous
+ 
+improvement
+ 
+in
+ 
+recommendations
+ 
+and
+ 
+predictions
+ 
+over
+ 
+time.
+ 
+4.  Expected  Inputs  
+The  system  should  accept  one  or  more  of  the  following  input  types:  
+4.1  Operational  and  Failure  Inputs  
+●  Equipment  delay  logs  ●  Fault/error  messages  generated  by  equipment  or  control  systems  ●  Failure  analysis  reports  ●  Incident  records  and  historical  breakdown  summaries  
+4.2  Condition  Monitoring  Inputs  
+●  Sensor  data  summaries  ●  Abnormality  or  anomaly  alerts  ●  Process  condition  indicators  relevant  to  equipment  health  
+4.3  Knowledge  and  Documentation  Inputs  
+●  Equipment  manuals  ●  Maintenance  SOPs  ●  Historical  maintenance  records  ●  Spare  parts  information,  including  availability  and  procurement  lead  time  
+4.4  User  Interaction  Inputs  
+●  Natural  language  queries  from  maintenance  engineers  ●  Scenario-based  learning  or  troubleshooting  prompts  ●  Follow-up  queries  in  a  multi-turn  conversational  format  
+
+5.  Expected  Outputs  
+The  system  should  generate  clear,  structured,  and  explainable  outputs,  including  but  not  
+limited
+ 
+to
+ 
+the
+ 
+following:
+ 
+5.1  Diagnostic  and  Predictive  Outputs  
+●  Probable  fault  diagnosis  ●  Root  cause  analysis  of  failures  or  abnormal  conditions  ●  Prediction  of  remaining  lifecycle  /  remaining  useful  life  (RUL)  of  equipment  or  
+systems
+ ●  Early  warning  of  potential  catastrophic  failures  in  critical  equipment  ●  Detection  of  process-related  defects  contributing  to  equipment  issues  
+5.2  Risk  and  Priority  Outputs  
+●  Risk  level  classification  (e.g.,  low,  medium,  high,  critical)  ●  Urgency  assessment  for  intervention  ●  Bottleneck  prioritization  at  the  plant  level  ●  Prioritization  based  on:  ○  process  criticality  ○  delay  severity  ○  spares  availability  ○  procurement  lead  time  
+5.3  Maintenance  Recommendation  Outputs  
+●  Step-by-step  maintenance  or  repair  recommendations  ●  Immediate  action  points  ●  Optimized  maintenance  plan  ●  Long-term  monitoring  recommendations  ●  Spare  procurement  strategy,  where  applicable  
+5.4  Reporting  Outputs  
+●  Structured  maintenance  reports  ●  Abnormal  alert  reports  ●  Maintenance  decision  summaries  for  engineers  and  supervisors  ●  Equipment-specific  digital  maintenance  log  entries  (optional  enhancement)  
+6.  Functional  Requirements  
+
+The  proposed  system  should  meet  the  following  functional  requirements:  
+ 
+1.  Contextual  Reasoning  Using  LLMs  or  SLMs  
+The  solution  should  integrate  Large  Language  Models  (LLMs)  or  Small  Language  
+Models
+ 
+(SLMs)
+ 
+for
+ 
+contextual
+ 
+understanding,
+ 
+reasoning,
+ 
+and
+ 
+maintenance
+ 
+query
+ 
+answering.
+ 
+Additional
+ 
+merit
+ 
+may
+ 
+be
+ 
+given
+ 
+to
+ 
+teams
+ 
+that
+ 
+create
+ 
+or
+ 
+fine-tune
+ 
+a
+ 
+domain-specific
+ 
+model
+ 
+for
+ 
+industrial
+ 
+maintenance
+ 
+use
+ 
+cases.
+ 
+Publicly
+ 
+available
+ 
+APIs
+ 
+may
+ 
+be
+ 
+used.
+ 
+2.  Knowledge  Integration  a.  The  system  should  be  capable  of  integrating  and  reasoning  over:  b.  Equipment  manuals  c.  Maintenance  SOPs  d.  Historical  maintenance  records  e.  Failure  reports  and  operational  logs  3.  Natural  Language  Interaction  a.  The  solution  should  support  natural  language  queries  from  users  and  
+handle
+ 
+multi-turn
+ 
+conversations
+ 
+in
+ 
+a
+ 
+context-aware
+ 
+manner.
+ 4.  Explainable  Recommendations  a.  Outputs  generated  by  the  system  should  be  explainable  and  traceable  to  
+relevant
+ 
+input
+ 
+data,
+ 
+historical
+ 
+records,
+ 
+rules,
+ 
+or
+ 
+documentation
+ 
+wherever
+ 
+possible.
+ 5.  Abnormality  Detection  and  Failure  Prediction  a.  The  system  should  include  an  architecture  for:  b.  Dynamic  abnormality  detection  c.  Early  warning  generation  d.  Failure  prediction  for  critical  equipment  6.  Feedback-Driven  Improvement  a.  The  system  should  incorporate  a  feedback  loop  through  which  user  
+corrections,
+ 
+confirmations,
+ 
+or
+ 
+outcomes
+ 
+can
+ 
+be
+ 
+used
+ 
+to
+ 
+improve
+ 
+future
+ 
+recommendations.
+ 7.  Real-Time  Alerting  Capability  a.  The  solution  should  be  capable  of  generating  real-time  abnormal  alert  
+reports
+ 
+and
+ 
+user-specific
+ 
+notifications
+ 
+where
+ 
+relevant.
+ 
+7.  Optional  Enhancements  
+
+Teams  may  additionally  implement  one  or  more  of  the  following  features  to  enhance  the  
+usability
+ 
+and
+ 
+practical
+ 
+value
+ 
+of
+ 
+the
+ 
+system:
+ 
+●  Conversational  interface  for  maintenance  engineers  ●  Visualization  dashboard  for  equipment  health,  trends,  and  anomalies  ●  Integration  with  simulated  IoT  or  equipment  monitoring  dashboards  ●  Dynamic  knowledge  base  for  each  equipment  or  system  ●  Automatic  digital  logbook  for  maintenance  activities  and  observations  ●  User-role-based  alerts  and  recommendations  
+8.  Expected  Outcome  
+The  final  solution  should  function  as  an  intelligent  maintenance  decision-support  system  
+that
+ 
+helps
+ 
+industrial
+ 
+operations
+ 
+teams:
+ 
+●  Reduce  unplanned  downtime  ●  Improve  maintenance  response  time  ●  Increase  diagnostic  accuracy  ●  Shift  from  reactive  to  proactive  maintenance  practices  ●  Improve  maintenance  planning  and  spare  management  ●  Enable  faster  and  more  informed  troubleshooting  in  industrial  environments  
+The  system  should  demonstrate  practical  applicability  in  a  steel  plant.  
+9.  Deliverables  
+Participants  are  expected  to  submit  the  following:  
+●  Detailed  Source  Code  of  Working  Prototype  ○  Complete  code  required  to  run  the  system.  ●  A  clear  document  explaining:  ○  System  architecture  ○  Technology  stack  used  ○  Data  flow  and  system  flow  ○  Model  design  and  reasoning  pipeline  ○  Alerting  and  prediction  logic  ○  Assumptions  and  limitations  ○  Documentation  describing  how  to  install,  configure,  and  run  the  system  ○  Sample  Input  and  Output  Demonstration  ●  A  screen  recording  that  showcases  the  features  that  have  been  built  
+
+All  the  above  deliverables  may  be  consolidated  and  uploaded  as  a  single  ZIP  file.  
+ 

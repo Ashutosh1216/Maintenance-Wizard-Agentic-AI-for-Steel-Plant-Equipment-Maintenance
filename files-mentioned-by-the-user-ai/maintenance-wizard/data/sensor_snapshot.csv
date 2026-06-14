@@ -1,0 +1,5 @@
+equipment_id,vibration_mm_s,temperature_c,current_a,oil_particles_ppm,pressure_bar,delay_minutes
+BF-01,11.8,96,510,120,2.5,90
+RM-02,8.5,88,440,155,3.1,45
+CC-03,6.2,78,530,75,2.2,20
+AG-04,5.1,72,260,35,1.4,15

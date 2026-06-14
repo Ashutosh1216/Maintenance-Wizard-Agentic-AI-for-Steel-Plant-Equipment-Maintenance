@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maintenance Wizard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">MW</span>
+        <div>
+          <strong>Maintenance Wizard</strong>
+          <small>Steel plant decision support</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#diagnose">Diagnose</a>
+        <a href="#health">Health</a>
+        <a href="#report">Report</a>
+      </nav>
+      <div class="status-box">
+        <span class="pulse"></span>
+        Live anomaly monitor
+      </div>
+    </aside>
+
+    <main>
+      <section class="topbar">
+        <div>
+          <h1>Agentic Maintenance Decision Support</h1>
+          <p>Diagnose faults, estimate risk and RUL, prioritize actions, and generate explainable reports.</p>
+        </div>
+        <button id="demoBtn">Load Demo Scenario</button>
+      </section>
+
+      <section class="grid" id="diagnose">
+        <form class="panel input-panel" id="analysisForm">
+          <div class="panel-title">
+            <h2>Maintenance Case</h2>
+            <span>Reactive + proactive analysis</span>
+          </div>
+
+          <label>
+            Equipment
+            <select id="equipment"></select>
+          </label>
+
+          <label>
+            Fault / alarm message
+            <textarea id="fault" rows="3" placeholder="Example: High vibration and hot bearing alarm on blower drive end"></textarea>
+          </label>
+
+          <label>
+            Delay log
+            <textarea id="delay" rows="3" placeholder="Example: 90 minute production delay, repeated trip during burden charging"></textarea>
+          </label>
+
+          <label>
+            Engineer query
+            <textarea id="query" rows="3" placeholder="Ask a follow-up question for the wizard"></textarea>
+          </label>
+
+          <button type="submit">Run Diagnosis</button>
+        </form>
+
+        <section class="panel result-panel">
+          <div class="panel-title">
+            <h2>Decision Summary</h2>
+            <span id="updatedAt">Waiting for analysis</span>
+          </div>
+          <div class="risk-row">
+            <div>
+              <small>Risk</small>
+              <strong id="risk">-</strong>
+            </div>
+            <div>
+              <small>Priority</small>
+              <strong id="priority">-</strong>
+            </div>
+            <div>
+              <small>RUL</small>
+              <strong id="rul">-</strong>
+            </div>
+          </div>
+          <h3 id="diagnosis">No diagnosis yet</h3>
+          <p id="urgency">Submit a case to generate an intervention plan.</p>
+          <div class="alert" id="warning">No active warning.</div>
+          <a class="report-link" id="reportLink" href="#" target="_blank" rel="noreferrer">Report will appear here</a>
+        </section>
+      </section>
+
+      <section class="grid" id="health">
+        <section class="panel">
+          <div class="panel-title">
+            <h2>Explainability</h2>
+            <span>Evidence and traceability</span>
+          </div>
+          <ul id="evidence"></ul>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <h2>Recommended Actions</h2>
+            <span>Step-by-step plan</span>
+          </div>
+          <ol id="actions"></ol>
+        </section>
+      </section>
+
+      <section class="grid" id="report">
+        <section class="panel">
+          <div class="panel-title">
+            <h2>Spare Strategy</h2>
+            <span>Procurement-aware prioritization</span>
+          </div>
+          <ul id="spares"></ul>
+        </section>
+
+        <section class="panel feedback-panel">
+          <div class="panel-title">
+            <h2>Feedback Loop</h2>
+            <span>Continuous improvement</span>
+          </div>
+          <label>
+            Engineer outcome
+            <textarea id="feedback" rows="4" placeholder="Example: Bearing replaced; vibration returned to 4.2 mm/s"></textarea>
+          </label>
+          <button id="feedbackBtn">Save Feedback</button>
+          <p id="feedbackStatus"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
